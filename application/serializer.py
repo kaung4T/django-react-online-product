@@ -16,17 +16,17 @@ class ProductSerializer(serializers.ModelSerializer):
     #     user2 = [serializers.CurrentUserDefault()]
     #     name = self.validated_data['name']
     #     price = self.validated_data['price']
-    def create(self, validated_data):
+    def create(self, data):
 
         print(self.context["request"].user)
         cust_req_data = {'user': self.context["request"].user,
                          'user2': [self.context["request"].user], 
-                         'name': validated_data['name'],
-                         'price': validated_data['price']
+                         'name': data['name'],
+                         'price': data['price']
                         }
 
-        data = ProductSerializer(data=cust_req_data)
-        if data.is_valid():
-            data.save()
+        ps = ProductSerializer(data=cust_req_data)
+        if ps.is_valid():
+            ps.save()
 
-        return Product.objects.create(**validated_data)
+        return Product.objects.create(**data)
