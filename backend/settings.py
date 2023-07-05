@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     
-    'application.apps.ApplicationConfig'
+    'application.apps.ApplicationConfig',
     'corsheaders',
 ]
 
@@ -131,5 +131,5 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'client/build/static')]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CORS_ALLOWED_ORIGINS = True
+CORS_ALLOW_ALL_ORIGINS = True
 
