@@ -53,7 +53,7 @@ useEffect(()=> {
 
         data.map( (d, i) => (
             <div>
-            <h4 key={i}>{d.name}, {d.price}, {d.user}</h4>
+            <h4 key={i}>{d.name}, {d.price}</h4>
             
             <form onSubmit={ () => {delete_product(d.id)}}>
                 <button>Delete</button>

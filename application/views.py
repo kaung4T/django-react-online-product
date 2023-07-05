@@ -24,7 +24,7 @@ class ProductApi(APIView):
         return Response(data=ps.data)
 
     def post(self, request):
-        ps = ProductSerializer(data=request.data, context={'request': request})
+        ps = ProductSerializer(data=request.data)
         
         if ps.is_valid():
 
