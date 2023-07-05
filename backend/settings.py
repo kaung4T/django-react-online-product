@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     
     'application.apps.ApplicationConfig',
     'corsheaders',
+    'rest_framework',    
 ]
 
 MIDDLEWARE = [
